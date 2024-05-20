@@ -1,0 +1,44 @@
+
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin bg($background, $bg_color: false, $bg_size: false, $bg_pos: false) {
+  background-image: url($background);
+  background-repeat: no-repeat;
+  @if $bg_size {
+    background-size: $bg-size;
+  }
+  @if $bg_color {
+    background-color: $bg_color;
+  }
+  @if $bg_pos {
+    background-position: $bg_pos;
+  }
+}
+$color_red: rgb(250, 82, 82);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", serif;
+  background-color: #333333;
+  text-align: center;
+}
+.d-flex {
+  display: flex;
+}
+.center {
+  max-width: 1280px;
+  padding: 0 30px;
+  @include center()
+}
+.result {
+  display: inline-block;
+  margin-top: 50px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bolder;
+}
